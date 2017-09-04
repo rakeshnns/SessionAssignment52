@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Assignment 5.2</title>
+</head>
+<body>
+<h1>Enter a string to check count of Vowel and Consonant. </h1>
+
+Enter a String:<input type="input" name="a" id="str">
+<button onclick= "stringcheck()" >Submit</button>
+
+<script type="text/javascript"> 
+	function stringcheck(){                                                                                                 //Function start
+		var chkstr = document.getElementById("str").value;
+		var len = chkstr.length;
+		var v   = 0;
+		var c   = 0;
+		var blankck = 0;
+		var constc = 0;
+		var vowelC = 0;
+
+		if (len > 0){                                                                                                       // Len IF loop start
+			for (var i = 0; i < len; i++) {                                                                                 //For loop start
+				                                                                           
+            if(chkstr[i] != " " && chkstr[i] != "."){
+				if(chkstr[i] == 'a' || chkstr[i] == 'e' || chkstr[i] =='i' || chkstr[i] == 'o' || chkstr[i] == 'u' ||
+				   chkstr[i] == 'A' || chkstr[i] == 'E' || chkstr[i] =='I' || chkstr[i] == 'O' || chkstr[i] =='U' )
+			   {    //Vowel check if loop
+
+						var vowelC = ++v;
+					    //alert("Vowel count:"+ vowelC +" Consonant count:"+ constc);
+				} else{ constc = ++c;}
+			}// end of for loop checking for blanks
+				//Vowel check if loop end.    
+		        
+        //For loop end.
+		} 
+		// end of if loop checking for Empty string.
+        }
+		else{alert("Input cannot be blanks.")}
+		//Else end. 
+		 alert("Vowel count:"+ vowelC +" Consonant count:"+ constc);  //end result
+	 }
+	//Finction End
+</script>
+
+</body>
+</html>
